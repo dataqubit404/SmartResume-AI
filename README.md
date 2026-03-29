@@ -5,6 +5,7 @@
 ![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![Google Gemini](https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=google-gemini&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
 ---
 ### Live Demo : 
@@ -13,20 +14,25 @@
 
 ## 🚀 Key Features
 
-* **🤖 AI Resume Parsing:** Upload `.txt` or `.docx` files. Our AI bridge extracts your experience, skills, and education into a structured format instantly.
-* **💬 AI Career Coach:** A dedicated chat interface for resume optimization, bullet point rewriting, and career advice.
-* **📊 Instant Analysis:** Get a professional grade for your resume with identified missing keywords and actionable improvement suggestions.
-* **🎯 Smart Job Matcher:** Match your profile against job descriptions to see your "Fit Score" and skill gaps.
-* **🖨️ Professional PDF Export:** Custom `@media print` CSS ensures a clean, one-page, ATS-friendly PDF download.
+* **🤖 Smart Resume Parser:** Upload `.txt` or `.docx` files; the AI automatically extracts experience, skills, and contact info into a structured format.
+* **💬 AI Career Coach:** An interactive chat interface providing real-time advice on bullet point impact, tone, and industry standards.
+* **📊 Comprehensive Analyzer:** Generates an ATS score (0-100), identifies missing industry keywords, and provides actionable improvement suggestions.
+* **🎯 Job Matcher:** Analyzes your resume against job descriptions to provide a "Fit Score" and highlight skill gaps.
+* **🖨️ ATS-Optimized PDF Export:** Custom print styles ensure the final document is clean, professional, and free of browser headers/footers.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
-* **Frontend:** Next.js 14/15 (App Router), React, Tailwind CSS.
-* **AI Engine:** Google Gemini 1.5 Flash (via Generative Language API).
-* **Backend:** Next.js API Routes (Secure Server-Side Bridge).
-* **Parsing:** Mammoth.js (Word Document to Text conversion).
+| Layer | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Frontend** | **Next.js (React)** | Client-side UI, state management, and routing. |
+| **Backend** | **Next.js API Routes** | Secure serverless bridge to protect API keys. |
+| **AI Engine** | **Google Gemini 1.5 Flash** | Processing resume data and generating coach advice. |
+| **Styling** | **Tailwind CSS** | Responsive design and professional document layouts. |
+| **Parsing** | **Mammoth.js** | Converting `.docx` files to raw text for AI processing. |
+| **Database** | **None (Session-Based)** | Privacy-focused; data is managed in local state, not stored on a server. |
+| **Deployment** | **Vercel** | Edge-network hosting for fast global performance. |
 
 ---
 
@@ -55,6 +61,28 @@ npm run dev
 Navigate to http://localhost:3000 to see the app in action.
 ```
 ---
+## Project Structure
+
+```bash
+resume-ai-app/                 # Your renamed root folder
+├── .env.local                 # 🔑 YOUR API KEY (Hidden from Git)
+├── .gitignore                 # 🛡️ THE SHIELD (Prevents leaks/bloat)
+├── package.json               # 📦 List of libraries (Mammoth, Next, etc.)
+├── next.config.mjs            # ⚙️ Next.js configuration
+├── public/                    # 🖼️ Static assets (Logos/Images)
+│   └── favicon.ico
+└── src/
+    └── app/
+        ├── layout.js          # 🏠 Main Wrapper (Change Title here)
+        ├── globals.css        # 🎨 Global styles & @media print rules
+        ├── page.js            # 💻 THE FRONTEND (Builder, Coach, AI Logic)
+        └── api/
+            └── chat/
+                └── route.js   # 🛰️ THE BACKEND (Secure Gemini Bridge)
+
+```
+
+---
 
 ## 📖 Usage Guide
 
@@ -75,6 +103,14 @@ Headers/Footers: Uncheck.
 Document Uploads
 
 The AI works best with clean text. While .docx is supported via Mammoth.js, for the most accurate parsing, we recommend uploading .txt files.
+
+---
+
+### **Quick Answers:**
+
+* **Is a Database used?** No. I chose a **State-Managed architecture** to prioritize user privacy. The data is handled in the browser's memory and passed to the AI via secure requests. This makes the app "Serverless" and lightweight.
+* **Is there a Backend?** Yes. I used **Next.js API Routes (Serverless Functions)**. This is a "Backend-as-a-Service" approach that allows us to securely use the Gemini API key without exposing it to the public.
+* **Is there a Frontend?** Yes. It is a **React-based SPA (Single Page Application)** built within the Next.js framework, using Tailwind CSS for a modern, responsive UI.
 
 ---
 
