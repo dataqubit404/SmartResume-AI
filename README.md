@@ -8,7 +8,7 @@
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
 ---
-### Live Demo : https://smart-resume-ai-vert.vercel.app
+### Live Demo : https://smart-resume-v1.vercel.app
 
 ---
 
